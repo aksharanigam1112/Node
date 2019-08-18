@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        window.onload=function()
+        {
+            var a = document.getElementById('a');
+            var more = document.getElementById('more');
+            more.addEventListener('click',function()
+            {
+                a.innerHTML = parseInt(a.innerHTML)+1;
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <form action="/" method="POST">
+        <input type="text" value="Item Name"name="item1">
+        <button type="submit">Done</button>
+    </form>
+    <table border=1>
+    {{#each item}}
+        <tr>
+            <td>{{item1}}</td>
+            <td id="a">1</td>
+            <td>
+                <form action="/input" method="post">
+                    <button type="button" id="more">More</button>
+                </form>
+            </td>
+        </tr>
+    {{/each}}
+    </table>
+
+</body>
+</html>
